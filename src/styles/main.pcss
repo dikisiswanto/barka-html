@@ -1,0 +1,79 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/components';
+
+/* purgecss start ignore */
+@import './components/content.pcss';
+@import './components/form.pcss';
+@import './components/nav.pcss';
+
+:root {
+	--primary-color: #002447;
+	--secondary-color: #20639B;
+	--accent-color: #FED700;
+}
+
+
+body {
+  @apply font-body transition-all duration-200 text-gray-700 text-base bg-gray-50;
+
+  &.is-disabled {
+		@apply overflow-hidden relative h-full;
+
+		@screen lg {
+			@apply overflow-visible;
+		}
+
+		& .backdrop {
+			@apply fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-black bg-opacity-75 z-30;
+
+			@screen lg {
+				@apply hidden;
+			}
+		}
+	}
+}
+
+.text-title {
+	@apply z-10 text-gray-600 border-b-4 border-gray-300 pb-2 relative;
+
+	&::after {
+		content: '';
+		@apply h-1 left-0 right-0 w-28 absolute top-full bg-tertiary;
+	}
+}
+
+.container {
+  @apply mx-auto max-w-container px-4;
+}
+
+.o-slider {
+	@apply bg-gray-300 lg:h-slider h-48 block;
+}
+
+.bg {
+  &-facebook {
+    background-color: #1877F2;
+  }
+
+  &-twitter {
+    background-color: #1DA1F2;
+  }
+
+  &-instagram {
+    background-color: #E1306C;
+  }
+
+  &-youtube {
+    background-color: #FF0000;
+  }
+
+  &-telegram {
+    background-color: #0088cc;
+  }
+
+  &-whatsapp {
+    background-color: #25D366;
+  }
+}
+/* purgecss end ignore */

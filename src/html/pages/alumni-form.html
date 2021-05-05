@@ -1,0 +1,107 @@
+{% set title = 'Pendaftaran Alumni' -%}
+{% extends "templates/master.html" -%}
+
+{% block content -%}
+  <main class="container space-y-5 my-5">
+    <h2 class="text-title lg:text-3xl text-xl font-bold font-heading">Pendaftaran Alumni</h2>
+    <form action="" class="space-y-3 min-h-screen">
+      <div class="flex flex-col lg:flex-row">
+        <label for="full_name" class="lg:w-1/4 pt-1">Nama Lengkap <span style="color: red">*</span></label>
+        <div class="lg:w-3/4">
+          <input type="text" class="form-input w-full" id="full_name"
+            name="full_name">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="gender" class="lg:w-1/4 pt-1">Jenis Kelamin <span style="color: red">*</span></label>
+        <div class="lg:w-3/4">
+          <select name="gender" class="form-select w-full" id="gender">
+            <option value="" selected="selected">Pilih :</option>
+            <option value="M">Laki-laki</option>
+            <option value="F">Perempuan</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="birth_date" class="lg:w-1/4 pt-1">Tanggal Lahir <span style="color: red">*</span></label>
+        <div class="lg:w-3/4">
+          <div class="relative">
+            <input type="text" readonly="" class="form-input w-full date"
+              id="birth_date" name="birth_date">
+            <div class="absolute right-0 mr-3 top-1/2 transform -translate-y-1/2">
+              <span class="btn btn-sm btn-outline-secondary rounded-0"><i class="fa fa-calendar text-dark"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="end_date" class="lg:w-1/4 pt-1">Tahun Lulus <span style="color: red">*</span></label>
+        <div class="lg:w-3/4">
+          <input type="text" class="form-input w-full" id="end_date"
+            name="end_date">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="identity_number" class="lg:w-1/4 pt-1">NIS</label>
+        <div class="lg:w-3/4">
+          <input type="text" class="form-input w-full" id="identity_number"
+            name="identity_number">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="street_address" class="lg:w-1/4 pt-1">Alamat <span style="color: red">*</span></label>
+        <div class="lg:w-3/4">
+          <textarea rows="5" class="form-textarea w-full" id="street_address"
+            name="street_address"></textarea>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="email" class="lg:w-1/4 pt-1">Email <span style="color: red">*</span></label>
+        <div class="lg:w-3/4">
+          <input type="text" class="form-input w-full" id="email"
+            name="email">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="phone" class="lg:w-1/4 pt-1">Telepon</label>
+        <div class="lg:w-3/4">
+          <input type="text" class="form-input w-full" id="phone"
+            name="phone">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="mobile_phone" class="lg:w-1/4 pt-1">Handphone</label>
+        <div class="lg:w-3/4">
+          <input type="text" class="form-input w-full" id="mobile_phone"
+            name="mobile_phone">
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label for="file" class="lg:w-1/4 pt-1">Foto</label>
+        <div class="lg:w-3/4">
+          <input type="file" id="photo" name="photo">
+          <small class="form-text text-muted">Foto harus JPG dan ukuran file maksimal 1 Mb</small>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <label class="lg:w-1/4 pt-1"></label>
+        <div class="lg:w-3/4">
+          <div class="g-recaptcha" data-sitekey="6LdpGDEUAAAAAE6YyGdnpY5UNzYSlwjBr3BoHZ5e">
+            <div style="width: 304px; height: 78px;">
+              <div><iframe
+                  src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdpGDEUAAAAAE6YyGdnpY5UNzYSlwjBr3BoHZ5e&amp;co=aHR0cHM6Ly9jbXMuc2Vrb2xhaGt1LndlYi5pZDo0NDM.&amp;hl=id&amp;v=6g5J7UfDQ9mLrweZHj04ekSP&amp;size=normal&amp;cb=h0b960p961d9"
+                  width="304" height="78" role="presentation" name="a-4zeaeqsk6pw4" frameborder="0" scrolling="no"
+                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"></iframe>
+              </div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+            </div><iframe style="display: none;"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row pt-3">
+        <span class="lg:w-1/4"></span>
+        <button type="submit" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5"><i class="fa fa-send mr-2"></i> Kirim</button>
+      </div>
+    </form>
+  </main>
+{%- endblock -%}

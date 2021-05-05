@@ -1,0 +1,67 @@
+.content {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  ol,
+  ul {
+    @apply ml-5;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  img {
+    @apply max-w-full shadow;
+  }
+
+  li {
+    @apply py-0.5;
+  }
+
+  & table {
+    @apply border border-collapse bg-transparent !important;
+
+    & thead {
+      @apply bg-gray-600 text-white border border-primary !important;
+
+      th {
+        @apply border text-white border-white !important;
+      }
+    }
+
+    & tr,
+    & td,
+    & th {
+      @apply border border-gray-300 px-2 py-2 !important;
+    }
+
+    & tr.highlighted {
+      @apply bg-secondary text-white !important;
+    }
+
+    & tbody {
+      & tr:nth-child(even) {
+        @apply bg-gray-100;
+      }
+    }
+
+  }
+
+  .table-responsive {
+    @apply overflow-auto;
+
+  }
+
+}
